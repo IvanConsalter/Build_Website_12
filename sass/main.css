@@ -1,3 +1,6 @@
+/* COLORS */
+/* FONT-SIZE */
+/* GRID */
 @-webkit-keyframes moveInLeft {
   0% {
     opacity: 0;
@@ -14,7 +17,6 @@
             transform: translateX(0);
   }
 }
-
 @keyframes moveInLeft {
   0% {
     opacity: 0;
@@ -141,6 +143,60 @@ body {
   margin-bottom: 6rem;
 }
 
+.heading-secondary {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  background: -webkit-gradient(linear, left top, right top, from(#7ed56f), to(#28b485));
+  background: linear-gradient(to right, #7ed56f, #28b485);
+  display: inline-block;
+  -webkit-background-clip: text;
+  color: transparent;
+  letter-spacing: 2px;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+
+.heading-secondary:hover {
+  -webkit-transform: skew(8deg, 2deg) scale(1.1);
+          transform: skew(8deg, 2deg) scale(1.1);
+  text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2);
+}
+
+.heading-tertiary {
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.paragraph {
+  font-size: 1.6rem;
+}
+
+.paragraph:not(:last-child) {
+  margin-bottom: 3rem;
+}
+
+.u-center-text {
+  text-align: center;
+}
+
+.u-margin-bottom-small {
+  margin-bottom: 1.5rem;
+}
+
+.u-margin-bottom-medium {
+  margin-bottom: 3.5rem;
+}
+
+.u-margin-bottom-big {
+  margin-bottom: 8rem;
+}
+
+.u-padding-sides-medium {
+  padding: 0 3rem;
+}
+
 .btn:link, .btn:visited {
   text-transform: uppercase;
   text-decoration: none;
@@ -203,6 +259,104 @@ body {
           animation-fill-mode: backwards;
 }
 
+.btn-text:link, .btn-text:visited {
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.8rem;
+  color: #28b485;
+  border-bottom: 1px solid #28b485;
+  padding: .3rem;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+.btn-text:hover {
+  background: #28b485;
+  color: #fff;
+  -webkit-box-shadow: 0 0.3rem 1rem rgba(0, 0, 0, 0.5);
+          box-shadow: 0 0.3rem 1rem rgba(0, 0, 0, 0.5);
+  -webkit-transform: translateY(-2px);
+          transform: translateY(-2px);
+}
+
+.btn-text:active {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  -webkit-transform: translateY(1px);
+          transform: translateY(1px);
+}
+
+.composition {
+  position: relative;
+}
+
+.composition__photo {
+  width: 55%;
+  -webkit-box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
+          box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
+  border-radius: 2px;
+  position: absolute;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  outline-offset: .5rem;
+}
+
+.composition__photo--p1 {
+  top: -2rem;
+  left: 0;
+}
+
+.composition__photo--p2 {
+  top: 2rem;
+  right: 0;
+}
+
+.composition__photo--p3 {
+  top: 10rem;
+  left: 20%;
+}
+
+.composition__photo:hover {
+  -webkit-transform: scale(1.1) translateY(-0.5rem);
+          transform: scale(1.1) translateY(-0.5rem);
+  z-index: 10;
+  outline: 0.5rem solid #28b485;
+  -webkit-box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.6);
+          box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.6);
+}
+
+.composition:hover .composition__photo:not(:hover) {
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+}
+
+.row {
+  max-width: 120rem;
+  margin: 0 auto;
+}
+
+.row:not(:last-child) {
+  margin-bottom: 8rem;
+}
+
+.row::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.row [class^='col-'] {
+  float: left;
+}
+
+.row [class^='col-']:not(:last-child) {
+  margin-right: 6rem;
+}
+
+.row .col-1-of-2 {
+  width: calc((100% - 6rem) / 2);
+}
+
 .header {
   height: 100vh;
   background: -webkit-gradient(linear, left top, right bottom, from(rgba(40, 180, 133, 0.7)), to(rgba(126, 213, 111, 0.7))), url(../img/hero.jpg);
@@ -231,5 +385,11 @@ body {
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   text-align: center;
+}
+
+.section-about {
+  background: #f7f7f7;
+  padding: 25rem 0;
+  margin-top: -25vh;
 }
 /*# sourceMappingURL=main.css.map */
