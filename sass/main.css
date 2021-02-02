@@ -2,6 +2,7 @@
 /* FONT-SIZE */
 /* GRID */
 /* MARGINS */
+/* RADIUS */
 @-webkit-keyframes moveInLeft {
   0% {
     opacity: 0;
@@ -195,6 +196,18 @@ body {
   margin-bottom: 8rem;
 }
 
+.u-margin-top-small {
+  margin-top: 1.5rem;
+}
+
+.u-margin-top-medium {
+  margin-top: 3.5rem;
+}
+
+.u-margin-top-big {
+  margin-top: 8rem;
+}
+
 .u-padding-sides-medium {
   padding: 0 3rem;
 }
@@ -216,7 +229,7 @@ body {
      object-fit: cover;
 }
 
-.btn:link, .btn:visited {
+.btn, .btn:link, .btn:visited {
   text-transform: uppercase;
   text-decoration: none;
   padding: 1.5rem 4rem;
@@ -226,6 +239,9 @@ body {
   transition: all 0.2s;
   position: relative;
   font-size: 1.6rem;
+  /* CHANGE FOR THE BUTTON ELEMENT */
+  border: none;
+  cursor: pointer;
 }
 
 .btn:hover {
@@ -241,11 +257,12 @@ body {
   opacity: 0;
 }
 
-.btn:active {
+.btn:active, .btn:focus {
   -webkit-transform: translateY(-0.1rem);
           transform: translateY(-0.1rem);
   -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
           box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  outline: none;
 }
 
 .btn--white {
@@ -479,7 +496,7 @@ body {
   width: 55%;
   -webkit-box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
           box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
-  border-radius: 2px;
+  border-radius: 3px;
   position: absolute;
   -webkit-transition: all .3s;
   transition: all .3s;
@@ -539,6 +556,108 @@ body {
 .feature-box:hover {
   -webkit-transform: scale(1.05) translateY(-1.5rem);
           transform: scale(1.05) translateY(-1.5rem);
+}
+
+.form__group:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+.form__input {
+  font-size: 1.5rem;
+  font-family: inherit;
+  color: inherit;
+  padding: 1.5rem 2rem;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.5);
+  border: none;
+  border-bottom: 3px solid transparent;
+  width: 90%;
+  display: block;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.form__input:focus {
+  outline: none;
+  -webkit-box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+          box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+  border-bottom: 3px solid #28b485;
+}
+
+.form__input:focus:invalid {
+  outline: none;
+  -webkit-box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+          box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+  border-bottom: 3px solid #ff7730;
+}
+
+.form__input::-webkit-input-placeholder {
+  color: #999;
+}
+
+.form__label {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-left: 2rem;
+  margin-top: .7rem;
+  display: block;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.form__input:placeholder-shown + .form__label {
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transform: translateY(-4rem);
+          transform: translateY(-4rem);
+}
+
+.form__radio-group {
+  width: 49%;
+  display: inline-block;
+}
+
+.form__radio-input {
+  display: none;
+}
+
+.form__radio-label {
+  font-size: 1.6rem;
+  cursor: pointer;
+  position: relative;
+  padding-left: 4.5rem;
+}
+
+.form__radio-button {
+  height: 3rem;
+  width: 3rem;
+  border: 5px solid #28b485;
+  border-radius: 50%;
+  display: inline-block;
+  position: absolute;
+  top: -.4rem;
+  left: 0;
+}
+
+.form__radio-button::after {
+  content: '';
+  display: block;
+  height: 1.3rem;
+  width: 1.3rem;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background: #28b485;
+  opacity: 0;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+
+.form__radio-input:checked ~ .form__radio-label .form__radio-button::after {
+  opacity: 1;
 }
 
 .story {
@@ -709,4 +828,24 @@ body {
 .section-stories {
   padding: 15rem 0;
   position: relative;
+}
+
+.section-book {
+  padding: 15rem 0;
+  background: -webkit-gradient(linear, left top, right bottom, from(#7ed56f), to(#28b485));
+  background: linear-gradient(to right bottom, #7ed56f, #28b485);
+}
+
+.book {
+  height: 50rem;
+  background: linear-gradient(105deg, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.7) 50%, transparent 50%), url(../img/nat-10.jpg);
+  background-size: cover;
+  border-radius: 3px;
+  -webkit-box-shadow: 1rem 2rem 3rem rgba(0, 0, 0, 0.7);
+          box-shadow: 1rem 2rem 3rem rgba(0, 0, 0, 0.7);
+}
+
+.book__form {
+  width: 50%;
+  padding: 6rem;
 }
