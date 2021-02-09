@@ -2,6 +2,14 @@
     background: $color-grey-light-1;
     padding: 25rem 0;
     margin-top: -25vh;
+
+    @include respond(tablet-land) {
+        margin-top: -35vh;
+    }
+
+    @include respond(tablet-port) {
+        margin-top: -30vh;
+    }
 }
 
 .section-features {

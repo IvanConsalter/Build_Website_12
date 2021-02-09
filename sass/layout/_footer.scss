@@ -18,6 +18,11 @@
         border-top: 1px solid $color-primary-light;
         padding-top: $margin-small;
         display: inline-block;
+
+        @include respond(tablet-port) {
+            width: 100%;
+            text-align: center;
+        }
     }
 
     &__list {
@@ -56,5 +61,10 @@
         display: inline-block;
         float: right;
         width: 85%;
+
+        @include respond(tablet-port) {
+            width: 100%;
+            text-align: center;
+        }
     }
 }
