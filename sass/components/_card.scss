@@ -145,4 +145,55 @@
             }
         }
     }
+
+    /* MEDIA */
+    @include respond(tablet-port) {
+
+        height: auto;
+
+        &__side {
+            height: auto;
+            position: relative;
+            border-radius: $border-radius-small;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+
+            &--back {
+                transform: rotateY(0);
+                border-radius: $border-radius-small;
+                border-top-left-radius: 0;
+                border-top-right-radius: 0;
+            }
+        }
+
+        &:hover &__side--front {
+            transform: rotateY(0);
+        }
+
+        // BACK SIDE STYLING
+        &__cta {
+
+            position: relative;
+            top: 0;
+            left: 0;
+            transform: translate(0);
+            width: 100%;
+            text-align: center;
+            padding: $margin-small 0;
+
+            .card__price--box {
+
+                margin-bottom: $margin-small;
+
+                &-only {
+                    font-size: 1.4rem;
+                    text-transform: uppercase;
+                }
+
+                &-value {
+                    font-size: 6rem;       
+                }
+            }
+        }
+    }
 }
